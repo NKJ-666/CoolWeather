@@ -42,6 +42,7 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.8.0'
     implementation 'com.squareup.okhttp3:mockwebserver:5.0.0-alpha.2'
     implementation 'com.google.code.gson:gson:2.8.8'
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
     implementation files('E:\\AndroidProject\\CoolWeather\\app\\libs\\QWeather_Public_Android_V4.6.jar')
     implementation files('E:\\AndroidProject\\CoolWeather\\app\\libs\\BaiduLBS_Android.jar')
     testImplementation 'junit:junit:4.+'

@@ -25,7 +25,7 @@
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="vX2khqryGXj4qEK5kXnwz3BYNIZWScGG"/>
         <activity
-            android:name=".MainActivity"
+            android:name=".view.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

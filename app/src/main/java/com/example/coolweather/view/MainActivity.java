@@ -1,8 +1,9 @@
-package com.example.coolweather;
+package com.example.coolweather.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.databinding.DataBindingUtil;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -10,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.example.coolweather.R;
 import com.example.coolweather.viewModel.MainViewModel;
 
 import java.util.Timer;
@@ -42,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
 
     public ImageView bingPic;
 
+    public SwipeRefreshLayout swipeRefreshLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void init() throws InterruptedException {
+        swipeRefreshLayout = findViewById(R.id.swipe_refresh);
+        swipeRefreshLayout.setColorSchemeResources(R.color.white);
         viewModel = new MainViewModel(this);
         weatherInfoText = findViewById(R.id.weather_info_text);
         titleCity = findViewById(R.id.title_city);
@@ -67,6 +73,6 @@ public class MainActivity extends AppCompatActivity {
         pm25Text = findViewById(R.id.pm25_text);
         sportText = findViewById(R.id.sport_text);
         bingPic = findViewById(R.id.bingPic);
-        viewModel.loadAll();
+        viewModel.loadAll(false);
     }
 }

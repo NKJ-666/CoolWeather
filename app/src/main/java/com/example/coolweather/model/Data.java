@@ -42,7 +42,6 @@ public class Data {
     }
 
     private void init(){
-        calendar = Calendar.getInstance();
         locationClient = new LocationClient(context.getApplicationContext());
         option = new LocationClientOption();
         option.setIsNeedAddress(true);
@@ -56,8 +55,9 @@ public class Data {
         locationClient.registerLocationListener(new BDAbstractLocationListener() {
             @Override
             public void onReceiveLocation(BDLocation bdLocation) {
+                calendar = Calendar.getInstance();
                 district = bdLocation.getDistrict();
-                listener.loadTitle(new Title(district, calendar.get(Calendar.HOUR_OF_DAY) + ":" + calendar.get(Calendar.MINUTE)));
+                listener.loadTitle(new Title(district, String.format("%02d", calendar.get(Calendar.HOUR_OF_DAY)) + ":" + String.format("%02d", calendar.get(Calendar.MINUTE))));
                 getWeatherId(district, listener);
             }
         });
