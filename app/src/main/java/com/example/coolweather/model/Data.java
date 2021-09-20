@@ -34,6 +34,8 @@ public class Data {
 
     private String district;
 
+    private String test;
+
     private Calendar calendar;
 
     public Data(Context context){
