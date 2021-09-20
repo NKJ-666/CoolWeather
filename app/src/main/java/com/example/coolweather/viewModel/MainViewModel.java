@@ -182,7 +182,7 @@ public class MainViewModel {
         activity.comfortText.setText(sharedPreferences.getString("comfortLevel", null));
         activity.sportText.setText(sharedPreferences.getString("sportLevel", null));
         activity.carWashText.setText(sharedPreferences.getString("carWashLevel", null));
-        Glide.with(activity).load(sharedPreferences.getString("bing_pic", null)).into(activity.bingPic);
+        loadBingPic();
     }
 
     private void loadBingPic(){

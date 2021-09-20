@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void init() throws InterruptedException {
         swipeRefreshLayout = findViewById(R.id.swipe_refresh);
-        swipeRefreshLayout.setColorSchemeResources(R.color.white);
+        swipeRefreshLayout.setColorSchemeResources(R.color.design_default_color_primary_dark);
         viewModel = new MainViewModel(this);
         weatherInfoText = findViewById(R.id.weather_info_text);
         titleCity = findViewById(R.id.title_city);
